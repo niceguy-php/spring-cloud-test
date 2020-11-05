@@ -1,0 +1,24 @@
+server:
+  port: 5061
+  servlet:
+    context-path: /eureka
+spring:
+  application:
+    name: eureka-server
+
+  redis:
+    host: localhost
+    port: 6379
+    password: offcn
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:5061/eureka/eureka
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000

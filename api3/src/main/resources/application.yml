@@ -1,0 +1,27 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /api2
+spring:
+  application:
+    name: hello
+  cloud:
+    config:
+#      name: hello
+      profile: dev
+      label: master
+      uri: http://localhost:9005
+      fail-fast: true
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:5061/eureka/eureka
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+yyx:
+  status: 1
